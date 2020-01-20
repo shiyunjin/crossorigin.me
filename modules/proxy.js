@@ -3,8 +3,6 @@ const request = require('request');
 const blockedPhrases = new RegExp(/porn|sexy/); // No thank you.
 
 let requireHeader = [
-    'origin',
-    'x-requested-with',
 ];
 
 let clientHeadersBlacklist = new Set([
