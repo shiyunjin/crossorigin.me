@@ -38,12 +38,6 @@ const proxy = method => (req, res, next) => {
         return res.end('Phrase in URL is disallowed.');
     }
 
-    // require Origin header
-    if (!requireHeader.some(header => req.headers[header])) {
-        res.statusCode = 403;
-        return res.end('Origin: header is required');
-    }
-
     // TODO redirect same origin
     /* from cors-anywhere: boolean redirectSameOrigin - If true, requests to
      * URLs from the same origin will not be proxied but redirected. The
