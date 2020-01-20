@@ -17,15 +17,9 @@ server.use(function (req, res, next) {
 });
 
 const freeTier = restify.throttle({
-    rate: 3,
-    burst: 10,
-    xff: true,
-    overrides: {
-        '192.168.1.1': {
-            rate: 0,        // unlimited
-            burst: 0
-        }
-    }
+    rate: 0,
+    burst: 0,
+    xff: true
 });
 
 // CORS configuration
